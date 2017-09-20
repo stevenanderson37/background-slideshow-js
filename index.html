@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="utf-8">
+    <title>Background Slideshow</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <!--STYLES-->
+    <link href="./styles/reset.css" rel="stylesheet">
+    <link href="./styles/styles.css"  rel="stylesheet">
+  </head>
+  <body>
+    <header class="slideshow">
+      <h1>Background Slideshow</h1>
+    </header>
+
+    <p>Slideshow for background images created with vanilla javascript.</p>
+    <footer>
+      <p>* All photographs were downloaded from https://www.pexels.com/search/nature/. The photo license is a Creative Commons Zero (CC0) license.</p>
+    </footer>
+
+    <script>
+      var i = 0;
+      var images = ['../img/amazing-animal-beautiful-beautifull.jpg', '../img/fall-autumn-red-season.jpg', '../img/nature-forest-trees-fog.jpeg', '../img/pexels-photo-230629.jpeg', '../img/pexels-photo-248797.jpeg', '../img/pexels-photo.jpg'];
+      var time = 3000;
+
+      function changeImg() {
+        var sliderDiv = document.querySelector('.slideshow');
+
+        sliderDiv.style.backgroundImage = "url(" + images[i] + ")";
+
+        if (i < images.length - 1) {
+          i++;
+        } else {
+          i = 0;
+        }
+
+        setTimeout("changeImg()", time);
+      }
+
+      window.onload = changeImg;
+    </script>
+
+  </body>
+</html>
